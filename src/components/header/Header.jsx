@@ -1,17 +1,20 @@
 import React from 'react';
-import TodoList from "../todolist/TodoList";
+import styles from './Header.module.css';
 
 export default function Header({filters, filter, onFilterChange}) {
     return (
-        <div>
-            <ul>
+        <header className={styles.header}>
+            <ul className={styles.filters}>
                 {filters.map((value, index) => (
                     <li key={index}>
-                    <button onClick={() => onFilterChange(value)}>{value}</button>
-                </li>
+                        <button
+                            className={`${styles.filter} ${filter === value && styles.selected}`}
+                            onClick={() => onFilterChange(value)}>{value}
+                        </button>
+                    </li>
                 ))}
             </ul>
-        </div>
+        </header>
     );
 }
 

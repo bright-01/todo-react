@@ -9,10 +9,10 @@ function App() {
 
 
   return (
-    <div>
+    <>
         <Header filters={filters} filter ={filter} onFilterChange={setFilter}/>
         <TodoList filter={filter}/>
-    </div>
+    </>
   );
 }
 
