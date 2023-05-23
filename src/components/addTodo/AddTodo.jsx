@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {v4} from "uuid";
 
 export default function AddTodo({onAdd}) {
 
@@ -6,7 +7,10 @@ export default function AddTodo({onAdd}) {
     const handleChange = ( e ) => setText( e.target.value );
     const handleSubmit = ( e ) => {
         e.preventDefault();
-        onAdd({ id :'고유값', text, status: 'active'});
+        if(text.trim().length === 0 ){
+            return;
+        }
+        onAdd({ id : v4(), text, status: 'active'});
         setText('');
     }
     return <form onSubmit={handleSubmit}>
