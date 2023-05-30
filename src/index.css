@@ -5,6 +5,14 @@
     --color-text: #22243b;
     --color-accent: #f16e03;
     --color-white: white;
+    --color-scrollbak: #aaa7a7
+}
+
+html.dark {
+    --color-bg-dark: #1a1c35;
+    --color-bg: #22243b;
+    --color-grey: #4e4e4e;
+    --color-text: #fdfffd;
 }
 
 body {
@@ -26,6 +34,8 @@ body {
             rgba(60, 61, 69, 1) 100%
     );
     font-size: 1.2rem;
+    accent-color: var(--color-accent);
+
 }
 
 #root {
